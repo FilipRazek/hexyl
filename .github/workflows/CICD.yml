@@ -304,13 +304,13 @@ jobs:
         fakeroot dpkg-deb --build "${DPKG_DIR}" "${DPKG_PATH}"
 
     - name: "Artifact upload: tarball"
-      uses: actions/upload-artifact@master
+      uses: actions/upload-artifact@main
       with:
         name: ${{ steps.package.outputs.PKG_NAME }}
         path: ${{ steps.package.outputs.PKG_PATH }}
 
     - name: "Artifact upload: Debian package - this step fails"
-      uses: actions/upload-artifact@master
+      uses: actions/upload-artifact@main
       if: steps.debian-package.outputs.DPKG_NAME
       with:
         name: ${{ steps.debian-package.outputs.DPKG_NAME }}
