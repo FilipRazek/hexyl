@@ -309,7 +309,7 @@ jobs:
         name: ${{ steps.package.outputs.PKG_NAME }}
         path: ${{ steps.package.outputs.PKG_PATH }}
 
-    - name: "Artifact upload: Debian package"
+    - name: "Artifact upload: Debian package - this step fails"
       uses: actions/upload-artifact@master
       if: steps.debian-package.outputs.DPKG_NAME
       with:
